@@ -11,14 +11,14 @@
   </head>
   <body>
     
-    <div class="login-main-container">
+    <form class="login-main-container">
         <h1 class="login-window-title">Login</h1>
 
         <div class="login-input-box">
             <ion-icon name="person-outline" class="login-username-icon"></ion-icon>
             <input type="text" name="login-username-input" id="login-username-input" class="login-input login-username-input" placeholder="Username">
         </div>
-        
+            
         <div class="login-input-box">
             <ion-icon name="key-outline" class="password-key-icon"></ion-icon>
             <input type="password" name="login-password-input" id="login-password-input" class="login-input login-password-input" placeholder="Password">
@@ -26,28 +26,28 @@
         </div>
 
         <button id="login-submit-button">Submit</button>
-    </div>
+    </form>
 
-    <div class="login-main-container">
-        <h1 class="login-window-title">Register</h1>
+    <form class="login-main-container">
+        <h1 class="login-window-title register-title">Register</h1>
 
         <div class="login-input-box">
             <ion-icon name="person-outline" class="login-username-icon"></ion-icon>
-            <input type="text" name="login-username-input" id="login-username-input" class="login-input login-username-input" placeholder="Username">
+            <input type="text" name="login-username-input" id="register-username-input" class="login-input login-username-input" placeholder="Username">
         </div>
         
         <div class="login-input-box">
-            <ion-icon name="key-outline" class="password-key-icon"></ion-icon>
-            <input type="password" name="login-password-input" id="register-password-input" class="login-input login-password-input" placeholder="Password">
+            <ion-icon name="key-outline" class="password-key-icon register-change-color"></ion-icon>
+            <input type="password" name="login-password-input" id="register-password-input" class="login-input login-password-input register-change-color" placeholder="Password">
         </div>
 
-        <div class="login-input-box">
-            <ion-icon name="key-outline" class="password-key-icon"></ion-icon>
-            <input type="password" name="login-password-input" id="register-repeat-password-input" class="login-input login-repeat-password-input" placeholder="Repeat password">
+        <div class="login-input-box repeat-password-div">
+            <ion-icon name="key-outline" class="password-key-icon register-change-color"></ion-icon>
+            <input type="password" name="login-password-input" id="register-repeat-password-input" class="login-input login-repeat-password-input register-change-color" placeholder="Repeat password">
         </div>
 
-        <button id="login-submit-button">Register</button>
-    </div>
+        <button id="register-submit-button">Register</button>
+    </form>
 
     <script src="login-script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
