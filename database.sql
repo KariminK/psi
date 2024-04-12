@@ -6,9 +6,9 @@ CREATE TABLE uzytkownicy(
 );
 CREATE TABLE posty(
     id integer auto_increment PRIMARY KEY,
-    userId integer ,
-    title varchar(20),
-    description varchar(20),
+    userId integer,
+    title varchar(100),
+    description varchar(1000),
     create_date date,
     FOREIGN KEY (userId) REFERENCES uzytkownicy(id)
 );

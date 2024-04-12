@@ -1,0 +1,26 @@
+GET http://localhost:3000/posts
+
+###
+
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "authorId": "NULL",
+    "create_date": "2021-01-21",
+    "title": "lorem ipsum wdfegrfhedth sit amet",
+    "content": "lorem ipsum rfhbtdhgfhftgjnyrft sit admet sit blab blab lalb alb"
+}
+
+###
+
+PUT http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "postId": 7,
+    "likes": 2137
+}
+
+###
+
