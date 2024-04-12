@@ -5,6 +5,7 @@
     --background-color: #282A36;
     --window-color: #44475A;
     --light-text: #F8F8F2;
+    --green: #50FA7B;
 }
 
 *{
@@ -91,6 +92,19 @@ body {
     outline: none;
 }
 
+.register-title {
+    margin: 100px 0 50px 0;
+}
+
+#password-error {
+    margin: 0 70px;
+    position: absolute;
+    bottom: 200px;
+    color: var(--accent-color);
+    font-size: 13px;
+    font-weight: bold;
+}
+
 .login-input-active {
     border-bottom: 1px solid var(--accent-color);
 }
@@ -118,8 +132,32 @@ body {
     border-radius: 20px;
     border: none;
     transition: 200ms;
+    cursor: pointer;
+}
+
+#register-submit-button {
+    width: 72%;
+    padding: 15px;
+    margin-top: 30px;
+    background-color: var(--accent-color);
+    border-radius: 20px;
+    border: none;
+    transition: 200ms;
+    cursor: pointer;
 }
 
 #login-submit-button:hover {
     box-shadow: #FF5555 0 0 20px;
+}
+
+#register-submit-button:hover {
+    box-shadow: #FF5555 0 0 20px;
+}
+
+.not-matching-password {
+    color: var(--accent-color);
+}
+
+.matching-password {
+    color: var(--green);
 }
