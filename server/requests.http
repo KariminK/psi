@@ -7,9 +7,9 @@ Content-Type: application/json
 
 {
     "authorId": "NULL",
-    "create_date": "2021-01-21",
-    "title": "lorem ipsum wdfegrfhedth sit amet",
-    "content": "lorem ipsum rfhbtdhgfhftgjnyrft sit admet sit blab blab lalb alb"
+    "create_date": "2022-05-12",
+    "title": "loremet rdffegeer",
+    "content": "meat fewgfegerhgrtuhjytikryheerfhretherthehrehr meat"
 }
 
 ###
@@ -18,8 +18,8 @@ PUT http://localhost:3000/posts
 Content-Type: application/json
 
 {
-    "postId": 7,
-    "likes": 2137
+    "postId": 10,
+    "likes": 1032
 }
 
 ###
