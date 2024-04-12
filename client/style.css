@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --accent-color: #FF5555;
+    --background-color: #282A36;
+    --window-color: #44475A;
+    --light-text: #F8F8F2;
+    --green: #50FA7B;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.post-container {
+    width: 40vw;
+    background-color: #282A36;
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.post-author-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--light-text);
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.post-author-name {
+    margin: 0 15px;
+    font-weight: 300;
+}
+
+.post-add-time {
+    font-weight: 200;
+    opacity: 0.7;
+}
+
+.post-content {
+    color: var(--light-text);
+}
+
+.post-title {
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.post-text-content {
+    font-size: 15px;
+    font-weight: 200;
+    opacity: 0.9;
+}
+
+.post-active-buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.like-button-container, .comment-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--window-color);
+    color: var(--light-text);
+    margin-top: 10px;
+    padding: 5px 12px;
+    border-radius: 30px;
+}
+
+.like-button-container {
+    margin-right: 20px;
+}
+
+.like-icon, .comment-icon {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.like-counter, .comment-counter {
+    font-size: 13px;
+}
