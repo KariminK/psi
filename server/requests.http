@@ -24,3 +24,21 @@ Content-Type: application/json
 
 ###
 
+POST  http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "login": "xyz124",
+    "password": "123456789"
+}
+
+###
+
+POST  http://localhost:3000/user/register
+Content-Type: application/json
+
+{
+    "login": "xyz124",
+    "password": "123456789"
+}
+
