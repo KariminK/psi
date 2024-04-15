@@ -24,9 +24,9 @@
           <p class="post-text-content">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus
             necessitatibus tempora, dicta accusantium distinctio, modi corporis
-            fugiat architecto, in molestiae a atque voluptate voluptatibus maiores
-            nesciunt laborum quos? Totam incidunt officia ipsum aliquid, ullam
-            nobis temporibus tempore maxime facere ducimus.
+            fugiat architecto, in molestiae a atque voluptate voluptatibus
+            maiores nesciunt laborum quos? Totam incidunt officia ipsum aliquid,
+            ullam nobis temporibus tempore maxime facere ducimus.
           </p>
         </div>
         <div class="post-active-buttons">
@@ -42,9 +42,48 @@
       </div>
     </template>
 
-    <div id="postList">
+    <template>
+      <div class="post-details-container selected-post">
+        <div class="post-container">
+          <div class="post-header-exit">
+            <div class="post-author-info">
+              <p class="post-author-name">username</p>
+              <li class="post-add-time">3 hr. ago</li>
+            </div>
+            <button class="exit-button">X</button>
+          </div>
+          <div class="post-content">
+            <h1 class="post-title">Post title</h1>
+            <p class="post-text-content">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Doloribus necessitatibus tempora, dicta accusantium distinctio,
+              modi corporis fugiat architecto, in molestiae a atque voluptate
+              voluptatibus maiores nesciunt laborum quos? Totam incidunt officia
+              ipsum aliquid, ullam nobis temporibus tempore maxime facere
+              ducimus.
+            </p>
+          </div>
+          <div class="post-active-buttons">
+            <div class="like-button-container">
+              <ion-icon name="heart-outline" class="like-icon"></ion-icon>
+              <p class="like-counter">3</p>
+            </div>
+          </div>
+        </div>
+        <div class="post-comments-container">
+          <input
+            type="text"
+            name="comment"
+            id="comment"
+            placeholder="What do you think about it?"
+          />
+          <ion-icon name="chatbox-outline" class="comment-icon"></ion-icon>
+          <div class="comment-section"></div>
+        </div>
+      </div>
+    </template>
 
-    </div>
+    <div id="postList"></div>
 
     <script
       type="module"

@@ -18,7 +18,7 @@
 .post-container {
     width: 40vw;
     background-color: #282A36;
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
     padding: 40px;
 }
 
@@ -85,4 +85,54 @@
 
 .like-counter, .comment-counter {
     font-size: 13px;
+}
+
+.selected-post {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 100vw 100vh rgba(40, 42, 54, 0.5);
+    width: 40vw;
+    border-radius: 20px;
+    
+}
+
+.post-header-exit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-comments-container {
+    width: 40vw;
+    background-color: #44475A;
+    padding: 50px;
+    border-radius: 0px 0px 20px 20px;
+    position: relative;
+}
+
+#comment {
+    font-size: 17px;
+    color: var(--light-text);
+    padding: 8px 50px;
+    border: 2px solid var(--light-text);
+    border-radius: 30px;
+    background: transparent;
+}
+
+.comment-icon {
+    position: absolute;
+    left: 75px;
+    top: 63px;
+    color: var(--light-text);
+}
+
+.exit-button {
+    padding: 5px 10px;
+    border-radius: 30px;
+    border: 1px solid var(--light-text);
+    font-weight: bold;
+    color: var(--light-text);
+    background: transparent;
 }
