@@ -75,8 +75,8 @@ class Post {
     this.liked = !this.liked;
     this.update();
     this.updateDetails();
-    if(this.liked){
-      this.addNotification("You liked a post", "heart-circle-outline");
+    if (this.liked) {
+      new Notification("You liked a post", "heart-circle-outline");
     }
   }
   renderPostDetails() {
@@ -157,11 +157,6 @@ class Post {
       const commentElement = comment.render();
       commentList.appendChild(commentElement);
     });
-  }
-  addNotification(content, icon){
-    const notification = new Notification(content, icon);
-    const notificationList = document.querySelector(".notification-list");
-    notificationList.appendChild(notification);
   }
 }
 
