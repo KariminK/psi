@@ -1,5 +1,6 @@
+import Comment from "./Comment.js";
 class Post {
-  constructor(id, author, creationDate, title, likes, description, comments) {
+  constructor(id, author, creationDate, title, likes, description) {
     this.id = id;
     this.author = author;
     this.creationDate = creationDate;
@@ -7,14 +8,13 @@ class Post {
     this.likes = likes;
     this.liked = false;
     this.description = description;
-    this.comments = comments;
+    this.comments = [new Comment("lubiespac", 2137, "asdasdsadasda")];
     this.isDetailsVisible = false;
     this.elements = this.render();
   }
   render() {
     const postTemplate = document.querySelector("#post-template");
     const templateCopy = postTemplate.content.cloneNode(true);
-
     const authorName = templateCopy.querySelector(".post-author-name");
     const title = templateCopy.querySelector(".post-title");
     const content = templateCopy.querySelector(".post-text-content");
@@ -81,17 +81,17 @@ class Post {
       ".post-details-template"
     );
     const templateCopy = postDetailsTemplate.content.cloneNode(true);
-
     const detAuthorName = templateCopy.querySelector(".post-author-name");
     const detTitle = templateCopy.querySelector(".post-title");
     const detContent = templateCopy.querySelector(".post-text-content");
     const detLikes = templateCopy.querySelector(".like-counter");
-
     const detLikeIcon = templateCopy.querySelector(".like-icon");
     const exitButton = templateCopy.querySelector(".exit-button");
     const postDetailsContainer = templateCopy.querySelector(
       ".post-details-container"
     );
+    const commentSection = templateCopy.querySelector(".comment-section");
+    const commentInput = templateCopy.querySelector("#comment");
 
     detAuthorName.textContent = this.author;
     detTitle.textContent = this.title;
@@ -102,10 +102,20 @@ class Post {
       this.like();
     });
 
+    commentInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        this.addComment(commentInput.value);
+        this.updateDetails();
+        commentInput.value = "";
+      }
+    });
+
     exitButton.addEventListener("click", () => {
       postDetailsContainer.remove();
       this.isDetailsVisible = false;
     });
+
+    this.renderComments(commentSection);
 
     document.body.appendChild(templateCopy);
   }
@@ -119,6 +129,9 @@ class Post {
     const likeCounterDet = document.querySelector(
       ".post-details-container .like-counter"
     );
+    const commentList = document.querySelector(".comment-section");
+    commentList.innerHTML = "";
+    this.renderComments(commentList);
 
     likeCounterDet.textContent = this.likes;
     if (this.liked) {
@@ -128,6 +141,16 @@ class Post {
       likeIconDet.name = "heart-outline";
       likeIconDet.style.setProperty("color", "var(--light-text)");
     }
+  }
+  addComment(description) {
+    const comment = new Comment("xyz", 2137, description);
+    this.comments.push(comment);
+  }
+  renderComments(commentList) {
+    this.comments.forEach((comment) => {
+      const commentElement = comment.render();
+      commentList.appendChild(commentElement);
+    });
   }
 }
 
