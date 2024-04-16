@@ -76,7 +76,7 @@ class Post {
     this.update();
     this.updateDetails();
     if(this.liked){
-      this.addNotification("You liked post");
+      this.addNotification("You liked a post", "heart-circle-outline");
     }
   }
   renderPostDetails() {
@@ -110,9 +110,9 @@ class Post {
       if (e.key === "Enter") {
         this.addComment(commentInput.value);
         this.updateDetails();
-        this.update();
-        this.addNotification("You commented post");
         commentInput.value = "";
+        this.update();
+        this.addNotification("You commented a post", "chatbubbles-outline");
       }
     });
 
@@ -158,10 +158,10 @@ class Post {
       commentList.appendChild(commentElement);
     });
   }
-  addNotification(content){
-    const not = new Notification(content);
-    const notList = document.querySelector(".notification-list");
-    notList.appendChild(not);
+  addNotification(content, icon){
+    const notification = new Notification(content, icon);
+    const notificationList = document.querySelector(".notification-list");
+    notificationList.appendChild(notification);
   }
 }
 
