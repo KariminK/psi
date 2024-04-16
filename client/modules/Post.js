@@ -1,4 +1,5 @@
 import Comment from "./Comment.js";
+import Notification from "./Notification.js";
 class Post {
   constructor(id, author, creationDate, title, likes, description) {
     this.id = id;
@@ -74,6 +75,9 @@ class Post {
     this.liked = !this.liked;
     this.update();
     this.updateDetails();
+    if(this.liked){
+      this.addNotification("You liked post");
+    }
   }
   renderPostDetails() {
     this.isDetailsVisible = true;
@@ -106,6 +110,8 @@ class Post {
       if (e.key === "Enter") {
         this.addComment(commentInput.value);
         this.updateDetails();
+        this.update();
+        this.addNotification("You commented post");
         commentInput.value = "";
       }
     });
@@ -151,6 +157,11 @@ class Post {
       const commentElement = comment.render();
       commentList.appendChild(commentElement);
     });
+  }
+  addNotification(content){
+    const not = new Notification(content);
+    const notList = document.querySelector(".notification-list");
+    notList.appendChild(not);
   }
 }
 
