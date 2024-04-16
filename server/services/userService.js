@@ -2,7 +2,7 @@ const login = (data, database, bcrypt) => {
   return new Promise((resolve, reject) => {
     const { login, password } = data;
     const sql = `SELECT * FROM uzytkownicy WHERE login = "${login}"`;
-    database.query(sql, (err, rows, fields) => {
+    database.query(sql, (err, rows) => {
       if (err) {
         reject({
           status: 500,
@@ -29,14 +29,14 @@ const register = (data, database, bcrypt) => {
   return new Promise((resolve, reject) => {
     const { login, password } = data;
     const sql = `SELECT * FROM uzytkownicy WHERE login = "${login}"`;
-    database.query(sql, (err, rows, fields) => {
+    database.query(sql, (err, rows) => {
       if (err) reject({ status: 500, reason: err });
       if (rows.length != 0)
         reject({ status: 202, reason: "username is already taken!" });
       else {
         const hashedPassword = bcrypt.hashSync(password, 10);
         const sql2 = `INSERT INTO uzytkownicy (id, login, password, create_date) VALUES (NULL, "${login}", "${hashedPassword}", NULL)`;
-        database.query(sql2, (err, rows, fields) => {
+        database.query(sql2, (err) => {
           if (err) reject({ status: 500, reason: err });
           resolve("user registered successfully");
         });
