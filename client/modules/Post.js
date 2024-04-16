@@ -8,7 +8,7 @@ class Post {
     this.likes = likes;
     this.liked = false;
     this.description = description;
-    this.comments = [new Comment("lubiespac", 2137, "asdasdsadasda")];
+    this.comments = [];
     this.isDetailsVisible = false;
     this.elements = this.render();
   }

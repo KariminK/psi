@@ -52,16 +52,10 @@
 }
 
 .post-text-content {
-<<<<<<< Updated upstream
-  font-size: 15px;
-  font-weight: 200;
-  opacity: 0.9;
-=======
     font-size: 15px;
     font-weight: 200;
     opacity: 0.9;
     margin-bottom: 20px;
->>>>>>> Stashed changes
 }
 
 .post-active-buttons {
@@ -122,15 +116,6 @@
 }
 
 #comment {
-<<<<<<< Updated upstream
-  font-size: 17px;
-  color: var(--light-text);
-  padding: 8px 50px;
-  border: 2px solid var(--light-text);
-  border-radius: 30px;
-  background: transparent;
-  outline: none;
-=======
     width: 100%;
     font-size: 17px;
     color: var(--light-text);
@@ -139,7 +124,6 @@
     border-radius: 30px;
     background: transparent;
     outline: none;
->>>>>>> Stashed changes
 }
 
 .comment-icon-det {
@@ -159,28 +143,6 @@
 }
 
 .post-container-det {
-<<<<<<< Updated upstream
-  width: 40vw;
-  background-color: #282a36;
-  border-radius: 20px 20px 0 0;
-  padding: 40px;
-}
-
-.notification {
-  list-style-type: none;
-  background-color: var(--background-color);
-  color: var(--light-text);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
-  border-radius: 10px;
-  width: 400px;
-}
-.notification-time {
-  font-size: 12px;
-}
-=======
     width: 40vw;
     background-color: #282A36;
     border-radius: 20px 20px 0 0;
@@ -236,4 +198,3 @@
 ::-webkit-scrollbar {
     display: none;
 }
->>>>>>> Stashed changes
