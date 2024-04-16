@@ -5,7 +5,7 @@ const userRouter = require("./routes/user");
 const commentsRouter = require("./routes/comments");
 const app = express();
 
-app.use(cors([]));
+app.use(cors());
 app.use(express.json());
 app.use("/posts", postsRouter);
 app.use("/comments", commentsRouter);

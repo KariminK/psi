@@ -1,12 +1,15 @@
 const getPosts = (database) =>
   new Promise((resolve, reject) => {
-    database.query("SELECT * FROM posty", (err, rows) => {
-      console.log("[REQUEST] [GET] /posts endpoint");
-      if (err) {
-        reject({ status: 404, reason: err });
+    database.query(
+      "SELECT p.id, login, title, likes, description, p.create_date from posty as p JOIN uzytkownicy as u on p.userId = u.id",
+      (err, rows) => {
+        console.log("[REQUEST] [GET] /posts endpoint");
+        if (err) {
+          reject({ status: 404, reason: err });
+        }
+        resolve(rows);
       }
-      resolve(rows);
-    });
+    );
   });
 
 const newPost = (data, database) =>
