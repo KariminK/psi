@@ -18,7 +18,7 @@
 .post-container {
     width: 40vw;
     background-color: #282A36;
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px;
     padding: 40px;
 }
 
@@ -119,9 +119,10 @@
     border: 2px solid var(--light-text);
     border-radius: 30px;
     background: transparent;
+    outline: none;
 }
 
-.comment-icon {
+.comment-icon-det {
     position: absolute;
     left: 75px;
     top: 63px;
@@ -135,4 +136,11 @@
     font-weight: bold;
     color: var(--light-text);
     background: transparent;
+}
+
+.post-container-det {
+    width: 40vw;
+    background-color: #282A36;
+    border-radius: 20px 20px 0 0;
+    padding: 40px;
 }
