@@ -273,7 +273,6 @@
 .posts {
   width: 54vw;
   height: 93vh;
-  overflow-y: scroll;
 }
 
 .add-post {
@@ -313,8 +312,11 @@
 
 #postList {
   display: flex;
+  height: 100%;
   flex-direction: column;
   align-items: center;
+  overflow-y: scroll;
+  padding-bottom: 150px;
   background-color: var(--background-color);
 }
 
