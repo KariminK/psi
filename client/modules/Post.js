@@ -4,7 +4,7 @@ class Post {
   constructor(id, author, creationDate, title, likes, description) {
     this.id = id;
     this.author = author;
-    this.creationDate = creationDate;
+    this.creationDate = new Date(creationDate);
     this.title = title;
     this.likes = likes;
     this.liked = false;
@@ -12,6 +12,18 @@ class Post {
     this.comments = [];
     this.isDetailsVisible = false;
     this.elements = this.render();
+    this.fetchComments();
+    this.updateTime(this.elements.timeAgo);
+    setInterval(() => this.updateTime(this.elements.timeAgo), 60000);
+  }
+  calcTimeAgo() {
+    const nowMinutes = new Date().getTime();
+    const creationMinuts = this.creationDate.getTime();
+    const seconds = (nowMinutes - creationMinuts) / 1000;
+    return Math.floor(seconds / 3600);
+  }
+  updateTime(timeEl) {
+    timeEl.textContent = this.calcTimeAgo() + " hours ago";
   }
   render() {
     const postTemplate = document.querySelector("#post-template");
@@ -21,7 +33,7 @@ class Post {
     const content = templateCopy.querySelector(".post-text-content");
     const likes = templateCopy.querySelector(".like-counter");
     const comments = templateCopy.querySelector(".comment-counter");
-
+    const timeAgo = templateCopy.querySelector(".post-add-time");
     const likeIcon = templateCopy.querySelector(".like-icon");
     likeIcon.addEventListener("click", () => {
       this.like();
@@ -53,6 +65,7 @@ class Post {
       likes,
       comments,
       likeIcon,
+      timeAgo,
     };
   }
   update() {
@@ -103,6 +116,7 @@ class Post {
     const detLikes = templateCopy.querySelector(".like-counter");
     const detLikeIcon = templateCopy.querySelector(".like-icon");
     const exitButton = templateCopy.querySelector(".exit-button");
+    const timeAgo = templateCopy.querySelector(".post-add-time");
     const postDetailsContainer = templateCopy.querySelector(
       ".post-details-container"
     );
@@ -134,7 +148,7 @@ class Post {
     });
 
     this.renderComments(commentSection);
-
+    this.updateTime(timeAgo);
     document.body.appendChild(templateCopy);
   }
   updateDetails() {
@@ -160,9 +174,22 @@ class Post {
       likeIconDet.style.setProperty("color", "var(--light-text)");
     }
   }
-  addComment(description) {
-    const comment = new Comment("xyz", 2137, description);
+  addComment(login, create_date, description) {
+    const comment = new Comment(login, create_date, description);
     this.comments.push(comment);
+  }
+  async fetchComments() {
+    const response = await fetch(
+      `http://localhost:3000/comments?postId=${this.id}`
+    );
+    const data = await response.json();
+    console.log(data);
+    data.forEach((comment) => {
+      this.comments.push(
+        new Comment(comment.login, comment.create_date, comment.content)
+      );
+    });
+    this.update();
   }
   renderComments(commentList) {
     this.comments.forEach((comment) => {

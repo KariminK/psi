@@ -1,7 +1,7 @@
 const getComments = (data, database) =>
   new Promise((resolve, reject) => {
     const { postId } = data;
-    const sql = `SELECT * FROM komentarze WHERE postId = ${postId}`;
+    const sql = `SELECT u.login, k.id, k.create_date, k.content FROM komentarze as k LEFT JOIN uzytkownicy as u ON k.userId = u.id WHERE postId = ${postId}`;
     if (!postId) reject({ status: 200, reason: "No post id specified" });
     else
       database.query(sql, (err, rows) => {

@@ -17,10 +17,3 @@ const fetchPosts = async () => {
   });
 };
 fetchPosts();
-
-new Post(2, "lubiespac", 2137, "tytulposta", 2137, "asd a  dad asd asd asd as dad sad a asdhjahjghj d ad    asgdsad a ajh ahj ajhdgjhd ad ash a dah jdg ash dgd asgd ajdgajgas asj dasga");
-new Post(2, "lubiespac", 2137, "tytulposta", 2137, "asd a  dad asd asd asd as dad sad a asdhjahjghj d ad    asgdsad a ajh ahj ajhdgjhd ad ash a dah jdg ash dgd asgd ajdgajgas asj dasga");
-new Post(2, "lubiespac", 2137, "tytulposta", 2137, "asd a  dad asd asd asd as dad sad a asdhjahjghj d ad    asgdsad a ajh ahj ajhdgjhd ad ash a dah jdg ash dgd asgd ajdgajgas asj dasga");
-new Post(2, "lubiespac", 2137, "tytulposta", 2137, "asd a  dad asd asd asd as dad sad a asdhjahjghj d ad    asgdsad a ajh ahj ajhdgjhd ad ash a dah jdg ash dgd asgd ajdgajgas asj dasga");
-new Post(2, "lubiespac", 2137, "tytulposta", 2137, "asd a  dad asd asd asd as dad sad a asdhjahjghj d ad    asgdsad a ajh ahj ajhdgjhd ad ash a dah jdg ash dgd asgd ajdgajgas asj dasga");
-

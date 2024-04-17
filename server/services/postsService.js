@@ -1,7 +1,7 @@
 const getPosts = (database) =>
   new Promise((resolve, reject) => {
     database.query(
-      "SELECT p.id, login, title, likes, description, p.create_date from posty as p JOIN uzytkownicy as u on p.userId = u.id",
+      "SELECT p.id, login, title, likes, description, p.create_date from posty as p LEFT JOIN uzytkownicy as u on p.userId = u.id",
       (err, rows) => {
         console.log("[REQUEST] [GET] /posts endpoint");
         if (err) {
@@ -44,7 +44,7 @@ const updatePost = (data, database) =>
       if (err) {
         reject({ status: 500, reason: err });
       }
-      resolve();
+      resolve({});
     });
   });
 module.exports = {
