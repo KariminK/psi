@@ -71,13 +71,25 @@ class Post {
       this.likes--;
     } else {
       this.likes++;
+      new Notification("You liked a post", "heart-circle-outline");
     }
     this.liked = !this.liked;
     this.update();
     this.updateDetails();
-    if (this.liked) {
-      new Notification("You liked a post", "heart-circle-outline");
-    }
+    fetch("http://localhost:3000/posts", {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        postId: this.id,
+        likes: this.likes,
+      }),
+    })
+      .then((res) => {
+        res.json();
+      })
+      .then((data) => console.log(data));
   }
   renderPostDetails() {
     this.isDetailsVisible = true;

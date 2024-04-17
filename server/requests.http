@@ -8,8 +8,8 @@ Content-Type: application/json
 {
     "authorId": "NULL",
     "create_date": "2022-05-12",
-    "title": "loremet rdffegeer",
-    "content": "meat fewgfegerhgrtuhjytikryheerfhretherthehrehr meat"
+    "title": "loremet dsdsds",
+    "content": "Bacon ipsum dolor tenderloin. Salami strip steak biltong, sirloin bacon andouille turkey hamburger pork belly pork chop meatball tenderloin shank ball tip buffalo. Short ribs pancetta turkey buffalo kevin frankfurter venison pork belly brisket chuck turducken beef ribs ham pork chop. "
 }
 
 ###
@@ -18,7 +18,7 @@ PUT http://localhost:3000/posts
 Content-Type: application/json
 
 {
-    "postId": 10,
+    "postId": 1,
     "likes": 1032
 }
 

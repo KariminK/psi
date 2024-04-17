@@ -69,12 +69,15 @@
         </div>
       </div>
     </template>
-    
+
     <template id="notification-template">
       <li class="notification">
-        <ion-icon name="heart-circle-outline" class="notification-icon"></ion-icon>
+        <ion-icon
+          name="heart-circle-outline"
+          class="notification-icon"
+        ></ion-icon>
         <p class="notification-content"></p>
-        <span class="notification-time">&gt;1 min ago</span>
+        <span class="notification-time">&lt;1 min ago</span>
       </li>
     </template>
 
@@ -97,13 +100,17 @@
       </div>
 
       <main class="main-container">
-        <div class="friend-list-profile">
-          
-        </div>
-        
+        <div class="friend-list-profile"></div>
+
         <div class="posts">
           <div class="add-post">
-            <textarea name="add-post-text" id="add-post-text" cols="30" rows="1" placeholder="Tell us what you think..."></textarea>
+            <textarea
+              name="add-post-text"
+              id="add-post-text"
+              cols="30"
+              rows="1"
+              placeholder="Tell us what you think..."
+            ></textarea>
             <button class="add-post-button">+</button>
           </div>
           <div id="postList"></div>
@@ -112,11 +119,8 @@
         <div class="activities">
           <div class="activity-list">
             <h2 class="last-activities">Your last activities</h2>
-            <div id="notification-list">
-            
-            </div>
+            <div id="notification-list"></div>
           </div>
-          
         </div>
       </main>
     </div>

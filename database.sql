@@ -1,7 +1,7 @@
 CREATE TABLE uzytkownicy(
     id integer auto_increment PRIMARY KEY,
     login varchar(20) NOT NULL,
-    password varchar(50) NOT NULL,
+    password varchar(100) NOT NULL,
     create_date date
 );
 CREATE TABLE posty(
@@ -9,6 +9,7 @@ CREATE TABLE posty(
     userId integer,
     title varchar(100),
     description varchar(1000),
+    likes integer,
     create_date date,
     FOREIGN KEY (userId) REFERENCES uzytkownicy(id)
 );

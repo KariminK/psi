@@ -4,6 +4,7 @@ import Notification from "./modules/Notification.js";
 const fetchPosts = async () => {
   const response = await fetch("http://localhost:3000/posts");
   const posts = await response.json();
+  console.log(posts);
   posts.forEach((post) => {
     new Post(
       post.id,

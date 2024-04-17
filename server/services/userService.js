@@ -53,7 +53,6 @@ const register = (data, database, bcrypt) => {
         const hashedPassword = bcrypt.hashSync(password, 10);
         const sql2 = `INSERT INTO uzytkownicy (id, login, password, create_date) VALUES (NULL, "${login}", "${hashedPassword}", NULL)`;
         database.query(sql2, (err, rows) => {
-          console.log(rows);
           if (err) {
             reject({ status: 500, reason: err });
             return;
