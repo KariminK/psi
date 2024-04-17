@@ -1,5 +1,4 @@
 import Post from "./modules/Post.js";
-import Notification from "./modules/Notification.js";
 
 const fetchPosts = async () => {
   const response = await fetch("http://localhost:3000/posts");
@@ -17,3 +16,15 @@ const fetchPosts = async () => {
   });
 };
 fetchPosts();
+
+const addPostButton = document.querySelector("#add-post-text");
+const addPostWindow = document.querySelector("#add-post-window");
+const closePostWindow = document.querySelector("#hide-post-window-button");
+
+addPostButton.addEventListener('click', ()=>{
+  addPostWindow.classList.remove("hidden");
+});
+
+closePostWindow.addEventListener('click', ()=>{
+  addPostWindow.classList.add("hidden");
+});

@@ -104,16 +104,19 @@
 
         <div class="posts">
           <div class="add-post">
-            <textarea
-              name="add-post-text"
-              id="add-post-text"
-              cols="30"
-              rows="1"
-              placeholder="Tell us what you think..."
-            ></textarea>
-            <button class="add-post-button">+</button>
+            <button id="add-post-text">Tell us what you think...</button>
           </div>
           <div id="postList"></div>
+        </div>
+
+        <div id="add-post-window" class="hidden">
+          <div id="post-window-title">
+            <input type="text" name="create-post-title" id="create-post-title" placeholder="Post title"/> 
+            <button id="hide-post-window-button">X</button>
+          </div>
+
+          <textarea name="" id="" placeholder="What do you want to say?"></textarea>
+          <button id="add-post-button">Add post</button>
         </div>
 
         <div class="activities">
