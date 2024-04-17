@@ -124,7 +124,7 @@ class Post {
         this.updateDetails();
         commentInput.value = "";
         this.update();
-        this.addNotification("You commented a post", "chatbubbles-outline");
+        new Notification("You commented a post", "chatbubbles-outline");
       }
     });
 
