@@ -2,7 +2,7 @@
 
 :root {
   --accent-color: #ff5555;
-  --background-color: #282a36e1;
+  --background-color: #282a36cb;
   --window-color: #44475a;
   --light-text: #f8f8f2;
   --green: #50fa7b;
@@ -35,7 +35,8 @@ body {
 .login-main-container {
   width: 25vw;
   height: 70vh;
-  background-color: rgba(68, 71, 90, 0.5);
+  background-color: #22232c34;
+  border: 1px solid #ff555554;
   backdrop-filter: blur(5px);
   border-radius: 20px;
   box-shadow: #282a36 2px 2px 30px;

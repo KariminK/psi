@@ -2,8 +2,9 @@
 
 :root {
   --accent-color: #ff5555;
-  --background-color: #282a36f3;
-  --window-color: #524646;
+  --background-color: #282a36e0;
+  --window-color: #ff565638;
+  --grey-window: #4b4b5849;
   --light-text: #f8f8f2;
   --green: #50fa7b;
 }
@@ -159,6 +160,7 @@ body {
 .post-container-det {
   width: 60vw;
   background-color: var(--window-color);
+  backdrop-filter: blur(40px);
   border-bottom: 2px solid var(--background-color);
   border-radius: 20px 20px 0 0;
   padding: 40px;
@@ -316,7 +318,8 @@ body {
 }
 
 .activity-list {
-  background-color: var(--window-color);
+  background-color: var(--grey-window);
+  backdrop-filter: blur(10px);
   width: 21vw;
   min-height: 50vh;
   max-height: 80vh;
@@ -346,7 +349,8 @@ body {
   width: 50vw;
   height: 60vh;
   padding: 50px;
-  background-color: var(--window-color);
+  background-color: var(--grey-window);
+  backdrop-filter: blur(70px);
   box-shadow: 0px 0px 100vw 100vh rgba(40, 42, 54, 0.8);
   border-radius: 20px;
   display: flex;
@@ -393,6 +397,11 @@ body {
   border-radius: 20px;
   background-color: var(--accent-color);
   color: var(--light-text);
+  transition: 200ms;
+}
+
+#add-post-button:hover {
+  box-shadow: 0px 0px 10px var(--accent-color);
 }
 
 #add-post-window textarea {
