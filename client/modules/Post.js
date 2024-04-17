@@ -1,7 +1,15 @@
 import Comment from "./Comment.js";
 import Notification from "./Notification.js";
 class Post {
-  constructor(id, author, creationDate, title, likes, description) {
+  constructor(
+    id,
+    author,
+    creationDate,
+    title,
+    likes,
+    description,
+    currentUserLogin
+  ) {
     this.id = id;
     this.author = author;
     if (creationDate === null) this.creationDate = new Date();
@@ -11,6 +19,7 @@ class Post {
     this.liked = false;
     this.description = description;
     this.comments = [];
+    this.currentUserLogin = currentUserLogin;
     this.isDetailsVisible = false;
     this.elements = this.render();
     this.fetchComments();
@@ -135,7 +144,7 @@ class Post {
 
     commentInput.addEventListener("keypress", (e) => {
       if (e.key === "Enter") {
-        this.addComment(commentInput.value);
+        this.addComment(this.currentUserLogin, new Date(), commentInput.value);
         this.updateDetails();
         commentInput.value = "";
         this.update();

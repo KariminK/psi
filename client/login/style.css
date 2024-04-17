@@ -1,163 +1,170 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-:root{
-    --accent-color: #FF5555;
-    --background-color: #282A36;
-    --window-color: #44475A;
-    --light-text: #F8F8F2;
-    --green: #50FA7B;
+:root {
+  --accent-color: #ff5555;
+  --background-color: #282a36e1;
+  --window-color: #44475a;
+  --light-text: #f8f8f2;
+  --green: #50fa7b;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    padding: 0 300px;
-    display: flex;
-    overflow: hidden;
-    background: url(assets/background\ image.jpg);
-    background-color: #282A36;
-    justify-content: space-around;
-    align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 300px;
+  display: flex;
+  overflow: hidden;
+  background-image: url(../assets/background\ image.jpg);
+  box-shadow: inset 0px 0px 100vw 100vh var(--background-color);
+  justify-content: space-around;
+  align-items: center;
+}
+
+#logo {
+  font-size: 160px;
+  color: var(--accent-color);
 }
 
 .login-main-container {
-    width: 25vw;
-    height: 70vh;
-    background-color: rgba(68, 71, 90, 0.5);
-    backdrop-filter: blur(5px);
-    border-radius: 20px;
-    box-shadow: #282A36 2px 2px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 25vw;
+  height: 70vh;
+  background-color: rgba(68, 71, 90, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  box-shadow: #282a36 2px 2px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login-window-title {
-    margin: 100px 0;
-    color: var(--light-text);
+  margin: 100px 0;
+  color: var(--light-text);
 }
 
 .login-input-box {
-    width: 18vw;
-    position: relative;
+  width: 18vw;
+  position: relative;
 }
 
 .login-input {
-    width: 100%;
-    padding: 15px 50px;
-    font-size: 15px;
-    background-color: transparent;
-    border: none;
-    margin-bottom: 30px;
-    color: var(--light-text);
-    font-weight: 400;
-    border: 1px solid transparent;
-    transition: 200ms;
+  width: 100%;
+  padding: 15px 50px;
+  font-size: 15px;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 30px;
+  color: var(--light-text);
+  font-weight: 400;
+  border: 1px solid transparent;
+  transition: 200ms;
 }
 
-.login-username-input, .login-repeat-password-input {
-    border-radius: 0 20px 20px 0;
+.login-username-input,
+.login-repeat-password-input {
+  border-radius: 0 20px 20px 0;
 }
 
 .login-password-input {
-    border-radius: 20px 0 0 20px;
+  border-radius: 20px 0 0 20px;
 }
 
 .login-username-input:focus,
 .login-repeat-password-input:focus {
-    border-top: 1px solid var(--accent-color);
-    border-bottom: 1px solid var(--accent-color);
-    border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
 }
 
 .login-password-input:focus {
-    border-top: 1px solid var(--accent-color);
-    border-bottom: 1px solid var(--accent-color);
-    border-left: 1px solid var(--accent-color);
+  border-top: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
 }
 
 .login-input::placeholder {
-    color: var(--light-text);
-    font-weight: 200;
+  color: var(--light-text);
+  font-weight: 200;
 }
 
 .login-input:focus {
-    outline: none;
+  outline: none;
 }
 
 .register-title {
-    margin: 100px 0 50px 0;
+  margin: 100px 0 50px 0;
 }
 
 #password-error {
-    margin: 0 70px;
-    position: absolute;
-    bottom: 200px;
-    color: var(--accent-color);
-    font-size: 13px;
-    font-weight: bold;
+  margin: 0 70px;
+  position: absolute;
+  bottom: 200px;
+  color: var(--accent-color);
+  font-size: 13px;
+  font-weight: bold;
 }
 
 .login-input-active {
-    border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
 }
 
-.login-username-icon, .password-key-icon {
-    position: absolute;
-    bottom: 47px;
-    margin-left: 20px;
-    color: var(--light-text);
-    font-size: 20px;
+.login-username-icon,
+.password-key-icon {
+  position: absolute;
+  bottom: 47px;
+  margin-left: 20px;
+  color: var(--light-text);
+  font-size: 20px;
 }
 
 #password-eye-icon {
-    position: absolute;
-    right: 30px;
-    bottom: 47px;
-    color: var(--light-text);
-    font-size: 20px;
+  position: absolute;
+  right: 30px;
+  bottom: 47px;
+  color: var(--light-text);
+  font-size: 20px;
 }
 
 #login-submit-button {
-    width: 72%;
-    padding: 15px;
-    background-color: var(--accent-color);
-    border-radius: 20px;
-    border: none;
-    transition: 200ms;
-    cursor: pointer;
+  width: 72%;
+  padding: 15px;
+  background-color: var(--accent-color);
+  border-radius: 20px;
+  border: none;
+  transition: 200ms;
+  cursor: pointer;
 }
 
 #register-submit-button {
-    width: 72%;
-    padding: 15px;
-    margin-top: 30px;
-    background-color: var(--accent-color);
-    border-radius: 20px;
-    border: none;
-    transition: 200ms;
-    cursor: pointer;
+  width: 72%;
+  padding: 15px;
+  margin-top: 30px;
+  background-color: var(--accent-color);
+  border-radius: 20px;
+  border: none;
+  transition: 200ms;
+  cursor: pointer;
 }
 
 #login-submit-button:hover {
-    box-shadow: #FF5555 0 0 20px;
+  box-shadow: #ff5555 0 0 20px;
 }
 
 #register-submit-button:hover {
-    box-shadow: #FF5555 0 0 20px;
+  box-shadow: #ff5555 0 0 20px;
 }
 
 .not-matching-password {
-    color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .matching-password {
-    color: var(--green);
+  color: var(--green);
 }

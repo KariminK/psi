@@ -1,5 +1,5 @@
 import Post from "./modules/Post.js";
-
+import Notification from "./modules/Notification.js";
 const USER = JSON.parse(localStorage.getItem("user"));
 console.log(USER);
 const fetchPosts = async () => {
@@ -13,7 +13,8 @@ const fetchPosts = async () => {
       post.create_date,
       post.title,
       post.likes,
-      post.description
+      post.description,
+      USER.login
     );
   });
 };
@@ -47,5 +48,9 @@ createPostButton.addEventListener("click", (e) => {
       0,
       postContent
     ).uploadToDatabase(USER.id);
+    addPostContentText.value = "";
+    addPostTitleInput.value = "";
+    addPostWindow.classList.add("hidden");
+    new Notification("You have just created a post", "happy-outline");
   }
 });

@@ -2,8 +2,8 @@
 
 :root {
   --accent-color: #ff5555;
-  --background-color: #282a36;
-  --window-color: #44475a;
+  --background-color: #282a36f3;
+  --window-color: #524646;
   --light-text: #f8f8f2;
   --green: #50fa7b;
 }
@@ -16,6 +16,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: url(assets/background\ image.jpg);
 }
 
 .container {
@@ -265,7 +269,7 @@
 }
 
 .friend-list-profile {
-  background-color: aqua;
+  background-color: var(--background-color);
   width: 23vw;
   height: 93vh;
 }
@@ -298,7 +302,7 @@
 #postList {
   display: flex;
   height: 100%;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   overflow-y: scroll;
   padding-bottom: 150px;
@@ -306,6 +310,8 @@
 }
 
 #notification-list {
+  display: flex;
+  flex-direction: column-reverse;
   overflow-y: scroll;
 }
 
@@ -350,8 +356,8 @@
 }
 
 #post-window-title {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 #create-post-title {
@@ -408,5 +414,5 @@
 }
 
 .hidden {
-  display: none!important;
+  display: none !important;
 }
