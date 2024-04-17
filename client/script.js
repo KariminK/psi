@@ -1,5 +1,7 @@
 import Post from "./modules/Post.js";
 
+const USER = JSON.parse(localStorage.getItem("user"));
+console.log(USER);
 const fetchPosts = async () => {
   const response = await fetch("http://localhost:3000/posts");
   const posts = await response.json();
@@ -17,14 +19,33 @@ const fetchPosts = async () => {
 };
 fetchPosts();
 
-const addPostButton = document.querySelector("#add-post-text");
+const addPostTitleInput = document.querySelector("#create-post-title");
+const addPostContentText = document.querySelector("#create-post-content");
 const addPostWindow = document.querySelector("#add-post-window");
 const closePostWindow = document.querySelector("#hide-post-window-button");
-
-addPostButton.addEventListener('click', ()=>{
+const addPostButton = document.querySelector("#add-post-text");
+const createPostButton = document.querySelector("#add-post-button");
+addPostButton.addEventListener("click", () => {
   addPostWindow.classList.remove("hidden");
 });
 
-closePostWindow.addEventListener('click', ()=>{
+closePostWindow.addEventListener("click", () => {
   addPostWindow.classList.add("hidden");
+});
+
+createPostButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  const postTitle = addPostTitleInput.value;
+  const postContent = addPostContentText.value;
+  if (postTitle && postContent) {
+    console.log(postTitle, " ", postContent);
+    new Post(
+      USER.id,
+      USER.login,
+      null,
+      postTitle,
+      0,
+      postContent
+    ).uploadToDatabase(USER.id);
+  }
 });

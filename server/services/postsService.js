@@ -15,7 +15,7 @@ const getPosts = (database) =>
 const newPost = (data, database) =>
   new Promise((resolve, reject) => {
     const { authorId, create_date, title, content } = data;
-
+    console.log(data);
     if (!authorId && !create_date && !title) {
       reject({ status: 400, reason: "bad data providen" });
     }

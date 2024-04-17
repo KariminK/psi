@@ -4,7 +4,8 @@ class Post {
   constructor(id, author, creationDate, title, likes, description) {
     this.id = id;
     this.author = author;
-    this.creationDate = new Date(creationDate);
+    if (creationDate === null) this.creationDate = new Date();
+    else this.creationDate = new Date(creationDate);
     this.title = title;
     this.likes = likes;
     this.liked = false;
@@ -195,6 +196,20 @@ class Post {
     this.comments.forEach((comment) => {
       const commentElement = comment.render();
       commentList.appendChild(commentElement);
+    });
+  }
+  uploadToDatabase(userId) {
+    fetch("http://localhost:3000/posts", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        authorId: userId,
+        create_date: "2024-01-01",
+        title: this.title,
+        content: this.content,
+      }),
     });
   }
 }
