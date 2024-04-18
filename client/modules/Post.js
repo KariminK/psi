@@ -8,7 +8,8 @@ class Post {
     title,
     likes,
     description,
-    currentUserLogin
+    currentUserLogin,
+    currentUserId
   ) {
     this.id = id;
     this.author = author;
@@ -21,6 +22,7 @@ class Post {
     this.comments = [];
     this.currentUserLogin = currentUserLogin;
     this.isDetailsVisible = false;
+    this.currentUserId = currentUserId;
     this.elements = this.render();
     this.fetchComments();
     this.updateTime(this.elements.timeAgo);
@@ -187,19 +189,34 @@ class Post {
   addComment(login, create_date, description) {
     const comment = new Comment(login, create_date, description);
     this.comments.push(comment);
+    this.uploadComment(description);
   }
   async fetchComments() {
     const response = await fetch(
       `http://localhost:3000/comments?postId=${this.id}`
     );
     const data = await response.json();
-    console.log(data);
     data.forEach((comment) => {
       this.comments.push(
         new Comment(comment.login, comment.create_date, comment.content)
       );
     });
     this.update();
+  }
+  async uploadComment(description) {
+    const response = await fetch("http://localhost:3000/comments", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userId: this.currentUserId,
+        postId: this.id,
+        content: description,
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
   }
   renderComments(commentList) {
     this.comments.forEach((comment) => {

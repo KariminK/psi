@@ -1,11 +1,9 @@
 import Post from "./modules/Post.js";
 import Notification from "./modules/Notification.js";
 const USER = JSON.parse(localStorage.getItem("user"));
-console.log(USER);
 const fetchPosts = async () => {
   const response = await fetch("http://localhost:3000/posts");
   const posts = await response.json();
-  console.log(posts);
   posts.forEach((post) => {
     new Post(
       post.id,
@@ -14,7 +12,8 @@ const fetchPosts = async () => {
       post.title,
       post.likes,
       post.description,
-      USER.login
+      USER.login,
+      USER.id
     );
   });
 };
@@ -46,7 +45,9 @@ createPostButton.addEventListener("click", (e) => {
       null,
       postTitle,
       0,
-      postContent
+      postContent,
+      USER.login,
+      USER.id
     ).uploadToDatabase(USER.id);
     addPostContentText.value = "";
     addPostTitleInput.value = "";

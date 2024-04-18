@@ -85,6 +85,7 @@ const checkPassword = () => {
       item.classList.add("matching-password");
     });
   }
+  return matching;
 };
 
 usernameRegisterInput.addEventListener("input", () => {
@@ -108,7 +109,7 @@ repeatPasswordInput.addEventListener("input", () => {
       item.classList.remove("matching-password");
       item.classList.remove("not-matching-password");
       const deleteElement = document.querySelector("#password-error");
-      deleteElement.remove();
+      deleteElement?.remove();
     });
   }
 });
@@ -130,7 +131,9 @@ passwordRegisterInput.addEventListener("input", () => {
 
 registerButton.addEventListener("click", (event) => {
   event.preventDefault();
-  register();
+  if (checkPassword()) {
+    register();
+  }
 });
 
 const login = async () => {
