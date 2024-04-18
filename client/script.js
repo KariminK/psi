@@ -1,5 +1,6 @@
 import Post from "./modules/Post.js";
 import Notification from "./modules/Notification.js";
+if (!localStorage.getItem("user")) location.href = "./login";
 const USER = JSON.parse(localStorage.getItem("user"));
 const fetchPosts = async () => {
   const response = await fetch("http://localhost:3000/posts");

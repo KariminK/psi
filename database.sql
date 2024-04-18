@@ -2,7 +2,7 @@ CREATE TABLE uzytkownicy(
     id integer auto_increment PRIMARY KEY,
     login varchar(20) NOT NULL,
     password varchar(100) NOT NULL,
-    create_date date
+    create_date datetime
 );
 CREATE TABLE posty(
     id integer auto_increment PRIMARY KEY,
@@ -10,7 +10,7 @@ CREATE TABLE posty(
     title varchar(100),
     description varchar(1000),
     likes integer,
-    create_date date,
+    create_date datetime,
     FOREIGN KEY (userId) REFERENCES uzytkownicy(id)
 );
 CREATE TABLE komentarze(
@@ -18,7 +18,7 @@ CREATE TABLE komentarze(
     userId integer NOT NULL,
     postId integer NOT NULL,
     content varchar(600),
-    create_date date,
+    create_date datetime,
     FOREIGN KEY (userId) REFERENCES uzytkownicy(id),
     FOREIGN KEY (postId) REFERENCES posty(id)
 );

@@ -32,10 +32,30 @@ class Post {
     const nowMinutes = new Date().getTime();
     const creationMinuts = this.creationDate.getTime();
     const seconds = (nowMinutes - creationMinuts) / 1000;
-    return Math.floor(seconds / 3600);
+    return Math.floor(seconds / 60);
   }
   updateTime(timeEl) {
-    timeEl.textContent = this.calcTimeAgo() + " hours ago";
+    const minutes = this.calcTimeAgo() - 120;
+    const hours = minutes > 60 ? minutes % 60 : 0;
+    let time = 0;
+    console.log(hours);
+    if (hours) {
+      if (hours > 24) {
+        time = hours % 24;
+        timeEl.textContent = time + " days ago";
+      } else if (hours == 0) {
+        timeEl.textContent = "<1 hour ago";
+      } else {
+        time = hours;
+        timeEl.textContent = time + " hours ago";
+      }
+    } else {
+      if (minutes <= 1) {
+        timeEl.textContent = ">1 minute ago";
+      } else {
+        timeEl.textContent = minutes + " minutes ago";
+      }
+    }
   }
   render() {
     const postTemplate = document.querySelector("#post-template");
