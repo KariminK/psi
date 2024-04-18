@@ -13,11 +13,7 @@ const getComments = (data, database) =>
 const newComment = (data, database) =>
   new Promise((resolve, reject) => {
     const { userId, postId, content } = data;
-    const now = new Date();
-    console.log(now.get);
-    const date = `${now.getFullYear()}-${now.getMonth() + 1}-${
-      now.getDate() < 10 ? "0" + now.getDate().toString() : now.getDate()
-    }`;
+    const date = new Date().toISOString().slice(0, 19).replace("T", " ");
 
     if (!userId || !postId || !content) {
       reject({ status: 400, reason: "bad data providen" });

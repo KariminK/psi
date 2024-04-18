@@ -15,7 +15,10 @@ const getPosts = (database) =>
 const newPost = (data, database) =>
   new Promise((resolve, reject) => {
     const { authorId, create_date, title, content } = data;
-    console.log(data);
+    const now = new Date();
+    const date = `${now.getFullYear()}-${now.getMonth() + 1}-${
+      now.getDate() < 10 ? "0" + now.getDate().toString() : now.getDate()
+    }`;
     if (!authorId && !create_date && !title) {
       reject({ status: 400, reason: "bad data providen" });
     }
@@ -25,7 +28,7 @@ const newPost = (data, database) =>
         ${authorId}, 
         "${title}", 
         "${content ?? "..."}",
-        "${create_date}", '0'
+        "${date}", '0'
       )`;
     database.query(sql, (err) => {
       if (err) {
